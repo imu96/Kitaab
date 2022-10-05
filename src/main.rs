@@ -1,4 +1,5 @@
 use std::io;
+mod adhoc;
 
 fn main() {
 
@@ -25,7 +26,9 @@ fn main() {
 	    // searches for book or member
 	    "search" => search(& cmd_args),
 	    // adds new book or member to database
-	    "add" => add(& cmd_args),
+	    "add" => adhoc::add(& cmd_args),
+	    // modifies entry in databases
+	    "edit" => adhoc::modify(& cmd_args),
 	    // pays fine for member
 	    "pay" => pay(& cmd_args),
 	    _ => println!("Invalid command. Please try again. Enter
