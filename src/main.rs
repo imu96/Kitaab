@@ -29,9 +29,8 @@ fn main() {
 	    if i % 4 == 0 {
 		println!("");
 	    }
-	    print!("{}: {.1}{} \t \t",i,
-		   format!(options[i]).bold().blue(),
-		   options[i][1..]);
+	    print!("({}): {}\t\t", format!(i).bold().blue(),
+		   options[i]);
 	}
 
 	print!("Enter option number>");
