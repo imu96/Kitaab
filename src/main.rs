@@ -2,6 +2,9 @@ use std::io;
 use colored::Colorize;
 mod adhoc;
 
+pub mod models;
+pub mod schema;
+
 fn main() {
 
     // Welcome message
