@@ -49,7 +49,7 @@ fn main() {
 	    "add" => adhoc::add(& cmd_args),
 	    // modifies entry in databases
 	    "edit" => adhoc::modify(& cmd_args),
-	    // pays fine for member
+	    // pays fine or membership balance for member
 	    "pay" => pay(& cmd_args),
 	    _ => println!("Invalid command. Please try again. Enter
 	\"help\" in order to see available options"),
