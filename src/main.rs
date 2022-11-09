@@ -14,7 +14,7 @@ fn main() {
     let mut cmd = String::new();
 
     // Options of what to do
-    let options = ["lend","return","renew", "pay fines", "search",
+    let options = ["issue","return","renew", "pay fines", "search",
 		   "add", "edit", "quit", "help"];
 
     loop {
@@ -38,7 +38,7 @@ fn main() {
 	match cmd_args[0] {
 
 	    // lends a book to a member
-	    "lend" => lend(& cmd_args),
+	    "issue" => lend(& cmd_args),
 	    // returns a book 
 	    "ret" => ret(& cmd_args),
 	    // prints the help message
