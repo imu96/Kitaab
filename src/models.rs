@@ -19,12 +19,12 @@ pub struct Book {
 
 #[derive(Insertable)]
 #[table_name = "books"]
-pub struct NewBook {
-    pub title: String,
-    pub auth_fst: String,
-    pub auth_lst: String,
+pub struct NewBook<'a> {
+    pub title: &'a str,
+    pub auth_fst:&'a str,
+    pub auth_lst:&'a str,
     pub curr_status: Status,
-    pub isbn: String,
+    pub isbn:&'a str,
 }
 
 #[derive(Queryable)]
@@ -37,9 +37,9 @@ pub struct Member {
 
 #[derive(Insertable)]
 #[table_name = "members"]
-pub struct NewMember {
-    pub fst_name: String,
-    pub lst_name: String,
+pub struct NewMember<'a> {
+    pub fst_name: &'a str,
+    pub lst_name:&'a str,
     pub dob: Date<UTC>,
 }
 
