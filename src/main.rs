@@ -14,8 +14,11 @@ fn main() {
     let mut cmd = String::new();
 
     // Options of what to do
-    let options = ["issue","return","renew", "pay fines", "search",
+    let options = ["issue / renew","return", "pay", "search",
 		   "add", "edit", "quit", "help"];
+    // Functions corresponding to each option
+    let fns : Vec<fn()> = vec![iss, ret, pay, search, add,
+			       edit, quit, help];
 
     loop {
 	println!("{}", "*** Commands ***".bold());
@@ -30,29 +33,16 @@ fn main() {
 		   options[i][1..]);
 	}
 
-	print!("What now>");
+	print!("Enter option number>");
 	io::stdin()
 	    .read_line(&mut cmd)
 	    .expect("Failed to read line. Please try again");
-	let cmd_args : Vec<&str> = cmd.split_whitespace().collect();
-	match cmd_args[0] {
-
-	    // lends a book to a member
-	    "issue" => lend(& cmd_args),
-	    // returns a book 
-	    "ret" => ret(& cmd_args),
-	    // prints the help message
-	    "help" => help(),
-	    // searches for book or member
-	    "search" => search(& cmd_args),
-	    // adds new book or member to database
-	    "add" => adhoc::add(& cmd_args),
-	    // modifies entry in databases
-	    "edit" => adhoc::modify(& cmd_args),
-	    // pays fine or membership balance for member
-	    "pay" => pay(& cmd_args),
-	    _ => println!("Invalid command. Please try again. Enter
-	\"help\" in order to see available options"),
+	let trimmed = cmd.trim();
+	match trimmed.parse::u32() {
+	    Ok(i) if i < fns.len() => fns[i](),
+	    Ok(i) => println!("Entered number is not an option. Please
+	try again. "),
+	    _ => println!("Enter a valid number, please."),
 	}
     }
 }
