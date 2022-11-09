@@ -1,4 +1,5 @@
 use diesel::prelude::*;
+use crate::schema::{books, members, loans};
 use chrono::{Datelike, Utc};
 
 enum Status {

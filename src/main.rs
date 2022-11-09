@@ -1,7 +1,8 @@
 use std::io;
 use colored::Colorize;
-mod adhoc;
 
+pub mod adhoc;
+pub mod ops;
 pub mod models;
 pub mod schema;
 
