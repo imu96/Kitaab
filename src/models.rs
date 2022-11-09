@@ -5,11 +5,11 @@ enum Status {
     BORROWED,
     LOST,
     AVAILABLE,
-}
+ }
 
 #[derive(Queryable)]
 pub struct Book {
-    pub id: i32,
+    pub id: u32,
     pub title: String,
     pub auth_fst: String,
     pub auth_lst: String,
@@ -19,7 +19,7 @@ pub struct Book {
 
 #[derive(Queryable)]
 pub struct Member {
-    pub id: i32,
+    pub id: u32,
     pub fst_name: String,
     pub lst_name: String,
     pub dob: Date<UTC>,
@@ -27,10 +27,10 @@ pub struct Member {
 
 #[derive(Queryable)]
 pub struct Loan {
-    pub id: i32,
+    pub id: u32,
     // doi stands for date of issue
     pub doi: Date<UTC>,
     pub due: Date<UTC>,
-    pub bk_id: i32,
-    pub mbr_id: i32,
+    pub bk_id: u32,
+    pub mbr_id: u32,
 }
