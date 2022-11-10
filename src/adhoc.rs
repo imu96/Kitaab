@@ -6,22 +6,24 @@ use diesel::prelude::*;
 
 // determines whether user or book needs to be added and calls the
 // appropriate function
-pub fn add() {
+pub fn add(conn: &PgConnection) {
+    println!("Add new member or new book?");
+    println!("(1) Member\t\t(2) Book");
 }
 
-fn new_book() {
+fn new_book(conn: &PgConnection)) {
 }
 
-fn new_mem() {
+fn new_mem(conn: &PgConnection)) {
 }
 
 // determines whether user or book record needs to be modified and
 // calls the appropriate function
-pub fn modify() {
+pub fn modify(conn: &PgConnection)) {
 }
 
-fn mod_book(){
+fn mod_book(conn: &PgConnection)){
 }
 
-fn mod_mem(){
+fn mod_mem(conn: &PgConnection)){
 }
