@@ -17,6 +17,7 @@ diesel::table! {
         auth_lst -> Varchar,
         curr_status -> Status,
         isbn -> Bpchar,
+        iss -> Nullable<Int4>,
     }
 }
 
@@ -36,6 +37,7 @@ diesel::table! {
         fst_name -> Varchar,
         lst_name -> Varchar,
         dob -> Date,
+        iss -> Nullable<Int4>,
     }
 }
 diesel::joinable!(issues -> books (bk_id));

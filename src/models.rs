@@ -16,6 +16,7 @@ pub struct Book {
     pub auth_lst: String,
     pub curr_status: Status,
     pub isbn: String,
+    pub iss: u32,
 }
 
 #[derive(Insertable)]
@@ -34,6 +35,7 @@ pub struct Member {
     pub fst_name: String,
     pub lst_name: String,
     pub dob: Date<UTC>,
+    pub iss: u32,
 }
 
 #[derive(Insertable)]
