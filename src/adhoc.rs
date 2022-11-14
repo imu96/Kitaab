@@ -8,7 +8,7 @@ use diesel::prelude::*;
 // appropriate function
 pub fn add(conn: &PgConnection) {
     println!("Add new member or new book?");
-    println!("(1) Member\t\t(2) Book");
+    println!("(1) member\t\t(2) book");
 }
 
 fn new_book(conn: &PgConnection)) {

@@ -19,7 +19,6 @@ fn establish_connection() -> PgConnection {
 }
 
 fn main() {
-
     // Welcome message
     println!("Welcome to Kitaab- a library management software!");
 
@@ -46,11 +45,12 @@ fn main() {
 
 	print!("Enter option number>");
 	let opt = get_opt();
-	match opt.parse::u32() {
-	    Ok(i) if i < fns.len() => fns[i](&conn),
-	    Ok(i) => println!("Entered number is not an option. Please
-	try again. "),
-	    _ => println!("Enter a valid number, please."),
+	if opt < fns.len {
+	    fns[i](&conn);
+	}
+	else {
+	    println!("Entered number is not an option. Please
+	try again.");
 	}
     }
 }
