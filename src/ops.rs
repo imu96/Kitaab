@@ -38,7 +38,7 @@ fn get_user(conn: &PgConnection) -> u32 {
 /* Creates a record in the issues database to issue
    a book to a user */
 pub fn iss(conn: &PgConnection) {
-    use self::schema::loans::dsl::*;
+    use self::schema::issues::dsl::*;
     use self::schema::members::dsl::*;
     use self::schema::books::dsl::*;
     let mem_id = get_user(conn);

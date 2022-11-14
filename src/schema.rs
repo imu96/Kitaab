@@ -21,7 +21,7 @@ diesel::table! {
 }
 
 diesel::table! {
-    loans (id) {
+    issues (id) {
         id -> Int4,
         doi -> Date,
         due -> Date,
@@ -38,12 +38,11 @@ diesel::table! {
         dob -> Date,
     }
 }
-
-diesel::joinable!(loans -> books (bk_id));
-diesel::joinable!(loans -> members (mbr_id));
+diesel::joinable!(issues -> books (bk_id));
+diesel::joinable!(issues -> members (mbr_id));
 
 diesel::allow_tables_to_appear_in_same_query!(
     books,
-    loans,
+    issues,
     members,
 );

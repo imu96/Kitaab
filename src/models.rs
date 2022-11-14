@@ -55,7 +55,7 @@ pub struct Issue {
 }
 
 #[derive(Insertable)]
-#[table_name = "loans"]
+#[table_name = "issues"]
 pub struct NewIssue {
     pub doi: Date<UTC>,
     pub due: Date<UTC>,
